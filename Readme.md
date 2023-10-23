@@ -39,7 +39,7 @@ Für die Timestamps wäre folgende Information wichtig:
 
 Anmerkung: Es werden richtige Uhrzeit Daten gesendet.
 
-### Nächste Schritte
+## Nächste Schritte
 - Visualisieren der Daten mit Grafana (hat Arduino AddOn)
 - Daten in InfluxDB speichern sollte möglich sein
 - Was kann man testen?
