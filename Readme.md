@@ -1,10 +1,14 @@
 # Zeitmessung mit NEO6m 0001
 
+![Plan](https://github.com/denisepostl/GPS_ESP32/blob/patch-1/plan.png)
+
 ## Hardware
 Im folgenden Abschnitt wird näher auf die Hardware eingegangen.
 
 ### Lötstellen
 Das nachfolgende Bild, soll die vorgenommenen Lötstellen an den Pins zum GPS-Modul erläutern.
+
+![Lötstellen](https://github.com/denisepostl/GPS_ESP32/blob/patch-1/aufbau.png)
 
 ### Verbindung zwischen GPS-Sensor und ESP
 Der GPS-Sensor ist mit dem ESP über die entsprechenden Pins für VCC, RX, TX und GND verbunden.
@@ -14,6 +18,8 @@ Der GPS-Sensor ist mit dem ESP über die entsprechenden Pins für VCC, RX, TX un
 - **TX**: Über diesen Pin erfolgt die Datenübertragung.
 - **GND**: Zur Erdung des Sensors.
 
+  ![Aufbau](https://github.com/denisepostl/GPS_ESP32/blob/patch-1/aufbau_esp.png)
+
 ## Daten
 Im nachfolgenden Abschnitt wird näher auf die Datenerfassung eingegangen.
 
@@ -21,6 +27,8 @@ Im nachfolgenden Abschnitt wird näher auf die Datenerfassung eingegangen.
 Ein ESP ist am Ziel platziert und ein ESP am Start. Sobald das Go-Cart durch die Lichtschranke am Start durchfährt wird am ersten ESP ein Timestamp gespeichert. Sobald es durch das Ziel passiert ist wird am zweiten ESP ein Timestamp gespeichert. Anschließend kann die Differenz berechnet werden.
 
 Die Daten werden als txt vom ESP überliefert. 
+
+![Platformio](https://github.com/denisepostl/GPS_ESP32/blob/patch-1/platformio.png)
 
 Für die Timestamps wäre folgende Information wichtig:
 
