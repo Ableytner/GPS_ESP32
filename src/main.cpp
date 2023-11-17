@@ -34,6 +34,23 @@ void setTime(){
   rtc.setTime(second, minute, hour, 17, 11, 2023);
 }
 
+void connectToWiFi() {
+  Serial.println("Connecting to WiFi...");
+
+  WiFi.begin(ssid, password);
+
+  int attemptCount = 0;
+  while (WiFi.status() != WL_CONNECTED && attemptCount < 20) {
+    delay(500);
+    Serial.print(".");
+    attemptCount++;
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("\nConnected to WiFi");
+  } else {
+    Serial.println("\nFailed to connect to WiFi. Please check your credentials.");
+
 void recordTime() {
   reading = digitalRead(lichtschranke); 
   if (reading == HIGH) {
@@ -65,6 +82,7 @@ void setup()
   Serial.begin(115200);
   serial_port.begin(9400, SERIAL_8N1, 16, 17);
 
+  connectToWiFi();
   pinMode(lichtschranke, INPUT_PULLUP);
   for (int i = 0; i < 100; i++)
   {
@@ -75,7 +93,6 @@ void setup()
 
   WiFi.begin("ZeroETime2G", "ChallangeTiming2023");
   mqtt.setClientName();
-  mqtt.client.setCallback(callback);
 }
 
 void loop(){
